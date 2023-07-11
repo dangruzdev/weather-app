@@ -25,7 +25,7 @@ function App() {
   }, [city]);
 
   const fetchWeatherData = (city) => {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=140d46611506424ea0e141051230907&q=${encodeURIComponent(city.trim())}`)
+    fetch(`http://api.weatherapi.com/v1/current.json?lang=ru&key=140d46611506424ea0e141051230907&q=${encodeURIComponent(city.trim())}`)
       .then(response => {
         if (response.ok) {
           return response.json();
@@ -49,6 +49,7 @@ function App() {
       {weather && (
         <div>
           <h1>Температура в городе <input className='city_input' type="text" value={city} onChange={(e) => setCity(e.target.value)} /> {weather.current.temp_c ? weather.current.temp_c : null }°C</h1>
+          <h2>{weather.current.condition.text}</h2>
           <img className='weather_icon' src={`https:${weather.current.condition.icon}`} alt="Weather Icon" />
         </div>
       )}
