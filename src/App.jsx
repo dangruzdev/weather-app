@@ -25,7 +25,7 @@ function App() {
   }, [city]);
 
   const fetchWeatherData = (city) => {
-    fetch(`http://api.weatherapi.com/v1/current.json?lang=ru&key=140d46611506424ea0e141051230907&q=${encodeURIComponent(city.trim())}`)
+    fetch(`https://api.weatherapi.com/v1/current.json?lang=ru&key=140d46611506424ea0e141051230907&q=${encodeURIComponent(city.trim())}`)
       .then(response => {
         if (response.ok) {
           return response.json();
