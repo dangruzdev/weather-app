@@ -1,3 +1,3 @@
 # weather-app
 Simple weather app made with React
-Простое приложение дял отображения погоды в React
+Простое приложение для отображения погоды в React
